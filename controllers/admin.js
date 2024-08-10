@@ -5,7 +5,7 @@ export const create = async (req, res) => {
         const { title, description, price, duration, category, createdBy } =
             req.body;
       
-console.log(req.body)
+
         const image = req.file;
         const newCourse = await Course.create({
             title,
@@ -16,7 +16,7 @@ console.log(req.body)
             createdBy,
             image: image?.path,
         });
-        console.log(newCourse);
+        
         return res.status(201).json({
             message: "course created successfully",
             Course: newCourse,
