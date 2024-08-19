@@ -1,5 +1,6 @@
 import express from "express";
 import dotenv from "dotenv";
+import cors from "cors";
 
 import { connectDB } from "./database/db.js";
 import userRouter from "./routes/user.js";
@@ -9,6 +10,9 @@ import adminRouter from "./routes/admin.js";
 dotenv.config();
 const app = express();
 app.use(express.json());
+app.use(cors());
+
+
 app.use("/uploads", express.static("uploads"));
 
 const port = process.env.PORT;

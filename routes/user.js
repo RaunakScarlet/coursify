@@ -6,5 +6,5 @@ import { isAuth } from "../middlewares/isAuth.js";
 router.post("/register", register);
 router.post("/verifyUser", verifyUser);
 router.post("/loginUser", loginUser);
-router.post("/myProfile", isAuth,myProfile);
+router.get("/myProfile", isAuth,myProfile);
 export default router;
